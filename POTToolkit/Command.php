@@ -2,6 +2,8 @@
 
 namespace POTToolkit;
 
+use POTToolkit\POTInput;
+
 /**
  * Description of Command
  *
@@ -10,9 +12,19 @@ namespace POTToolkit;
 class Command
 {
 
+    /**
+     * @var POTInput
+     */
+    protected $potInput;
+
+    public function __construct(POTInput $potInput)
+    {
+        $this->potInput = $potInput;
+    }
+
     public function execute(array $args)
     {
-        
+        $this->potInput->load('/path/to/file.pot');
     }
 
 }

@@ -9,7 +9,12 @@ namespace POTToolkit;
  */
 class POTInput
 {
-    //put your code here
+
+    public function load($filename)
+    {
+        
+    }
+
 }
 
 ?>
