@@ -1,15 +1,15 @@
 <?php
 
-namespace PotToolkit;
+namespace PotToolkit\Command;
 
-use PotToolkit\PotInput;
+use PotToolkit\Input\PotInput;
 
 /**
- * Description of Command
+ * Description of PotToCsvCommand
  *
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
-class Command
+class PotToCsvCommand
 {
 
     /**
