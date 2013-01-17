@@ -3,6 +3,7 @@
         "psr-0": {"PotToolkit": "src/"}
     },
     "require": {
-        "symfony/console": "v2.1.5"
+        "symfony/console": "v2.1.5",
+        "mockery/mockery": "0.7.2"
     }
 }
