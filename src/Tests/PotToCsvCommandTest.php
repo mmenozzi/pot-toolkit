@@ -15,14 +15,14 @@ class PotToCsvCommandTest extends \PHPUnit_Framework_TestCase
 
     public function testExecute()
     {
+        $input = m::mock('Symfony\Component\Console\Input\InputInterface');
+        $output = m::mock('Symfony\Component\Console\Output\OutputInterface');
 
         $potInput = m::mock('PotToolkit\Input\PotInput');
-        $potInput->shouldReceive('load')->with('/path/to/file.pot');
+        //$potInput->shouldReceive('load')->atLeast()->times(1)->with('/path/to/file.pot');
 
-        $command = new PotToCsvCommand($potInput);
-
-        $arguments = array('csv', '/path/to/file.pot');
-        $command->execute($arguments);
+        $command = new PotToCsvCommand();
+        $command->execute($input, $output);
     }
 
 }

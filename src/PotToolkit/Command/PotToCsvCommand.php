@@ -3,28 +3,30 @@
 namespace PotToolkit\Command;
 
 use PotToolkit\Input\PotInput;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Description of PotToCsvCommand
  *
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
-class PotToCsvCommand
+class PotToCsvCommand extends Command
 {
 
-    /**
-     * @var PotInput
-     */
-    protected $potInput;
-
-    public function __construct(PotInput $potInput)
+    protected function configure()
     {
-        $this->potInput = $potInput;
+        $this
+            ->setName('potkit:pottocsv')
+            ->addArgument('input')
+            ->addArgument('output', InputArgument::OPTIONAL);
     }
 
-    public function execute(array $args)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->potInput->load('/path/to/file.pot');
+
     }
 
 }
