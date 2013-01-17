@@ -7,7 +7,7 @@ namespace PotToolkit\Model;
  *
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
-class Translations
+class TranslationSet
 {
     //put your code here
 }

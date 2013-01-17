@@ -12,7 +12,12 @@ class PotInput
 
     public function load($filename)
     {
-        
+        // TODO
+    }
+
+    public function getTranslationSet()
+    {
+        // TODO
     }
 
 }
