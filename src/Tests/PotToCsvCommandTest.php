@@ -3,6 +3,7 @@
 namespace PotToolkit\Tests;
 
 use PotToolkit\Command\PotToCsvCommand;
+use Mockery as m;
 
 /**
  * Description of PotToCsvCommandTest
@@ -14,10 +15,9 @@ class PotToCsvCommandTest extends \PHPUnit_Framework_TestCase
 
     public function testExecute()
     {
-        $potInput = $this->getMock('PotToolkit\Input\PotInput');
-        $potInput->expects($this->once())
-                ->method('load')
-                ->with('/path/to/file.pot');
+
+        $potInput = m::mock('PotToolkit\Input\PotInput');
+        $potInput->shouldReceive('load')->with('/path/to/file.pot');
 
         $command = new PotToCsvCommand($potInput);
 
