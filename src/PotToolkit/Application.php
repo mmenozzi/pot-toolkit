@@ -3,6 +3,7 @@
 namespace PotToolkit;
 
 use Symfony\Component\Console\Application as SymfonyApplication;
+use PotToolkit\Command\CsvToPotCommand;
 use PotToolkit\Command\PotToCsvCommand;
 
 /**
@@ -12,12 +13,13 @@ class Application extends SymfonyApplication
 {
     public function __construct()
     {
-        $name = 'POT Toolkit';
+        $name = 'Portable Text Toolkit';
         $version = '1.0';
 
         parent::__construct($name, $version);
 
         $this->add(new PotToCsvCommand());
+        $this->add(new CsvToPotCommand());
     }
 
 }
