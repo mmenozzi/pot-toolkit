@@ -1,13 +1,13 @@
 <?php
 
-namespace POTToolkit;
+namespace PotToolkit;
 
 /**
- * Description of POTInput
+ * Description of PotInput
  *
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
-class POTInput
+class PotInput
 {
 
     public function load($filename)
@@ -17,4 +17,3 @@ class POTInput
 
 }
 
-?>

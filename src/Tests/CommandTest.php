@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\POTToolkit;
+namespace PotToolkit\Tests;
 
-use POTToolkit\Command;
+use PotToolkit\Command;
 
 /**
  * Description of CommandTest
@@ -14,7 +14,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
 
     public function testExecute()
     {
-        $potInput = $this->getMock('\POTToolkit\POTInput');
+        $potInput = $this->getMock('PotToolkit\PotInput');
         $potInput->expects($this->once())
                 ->method('load')
                 ->with('/path/to/file.pot');

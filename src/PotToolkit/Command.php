@@ -1,8 +1,8 @@
 <?php
 
-namespace POTToolkit;
+namespace PotToolkit;
 
-use POTToolkit\POTInput;
+use PotToolkit\PotInput;
 
 /**
  * Description of Command
@@ -13,11 +13,11 @@ class Command
 {
 
     /**
-     * @var POTInput
+     * @var PotInput
      */
     protected $potInput;
 
-    public function __construct(POTInput $potInput)
+    public function __construct(PotInput $potInput)
     {
         $this->potInput = $potInput;
     }

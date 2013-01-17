@@ -1,6 +1,6 @@
 <?php
 
-namespace POTToolkit;
+namespace PotToolkit;
 
 /**
  * Description of Translations
