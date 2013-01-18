@@ -1,0 +1,15 @@
+; Comments
+; Comments
+; Comments
+
+msgid "Source string to be translated 1"
+msgstr "Translation 1"
+
+msgid "Source string to be translated 2"
+msgstr "Translation 2"
+
+msgid "Source string to be translated 3"
+msgstr "Translation 3"
+
+msgid "Source string to be translated 4"
+msgstr "Translation 4"
