@@ -1,6 +1,6 @@
 <?php
 
-namespace PotToolkit\Tests;
+namespace PotToolkit\Tests\Command;
 
 use PotToolkit\Command\PotToCsvCommand;
 use Mockery as m;
