@@ -37,7 +37,7 @@ class TranslationSetTest extends \PHPUnit_Framework_TestCase
                 'source2' => 'translation2',
                 'source3' => 'translation3',
             ),
-            $translations
+            $set->getAsArray()
         );
     }
 }

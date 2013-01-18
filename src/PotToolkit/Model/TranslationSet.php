@@ -96,6 +96,11 @@ class TranslationSet implements Countable, Iterator
     {
         reset($this->translations);
     }
+
+    public function getAsArray()
+    {
+        return $this->translations;
+    }
 }
 
 ?>
