@@ -4,6 +4,7 @@
     },
     "require": {
         "symfony/console": "v2.1.5",
-        "mockery/mockery": "0.7.2"
+        "mockery/mockery": "0.7.2",
+        "gettext/gettext": "dev-master"
     }
 }
