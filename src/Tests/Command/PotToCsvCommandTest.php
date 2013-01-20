@@ -25,7 +25,7 @@ class PotToCsvCommandTest extends \PHPUnit_Framework_TestCase
      */
     public function testExecute($inputFilePath, $outputFilePath)
     {
-        $translationSet = m::mock('PotToolkit\Model\TranslationSet');
+        $translationSet = m::mock('Gettext\Entries');
 
         $potInput = m::mock('PotToolkit\Input\PotInput');
         $potInput->shouldReceive('load')->atLeast()->times(1)->with($inputFilePath);

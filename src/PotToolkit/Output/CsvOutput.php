@@ -2,7 +2,7 @@
 
 namespace PotToolkit\Output;
 
-use PotToolkit\Model\TranslationSet;
+use Gettext\Entries;
 
 /**
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
@@ -10,7 +10,7 @@ use PotToolkit\Model\TranslationSet;
 class CsvOutput
 {
 
-    public function setTranslationSet(TranslationSet $translationSet)
+    public function setTranslationSet(Entries $translationSet)
     {
         // TODO
     }

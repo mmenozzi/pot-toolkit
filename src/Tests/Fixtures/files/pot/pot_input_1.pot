@@ -1,6 +1,6 @@
-; Comments
-; Comments
-; Comments
+# Comments
+# Comments
+# Comments
 
 msgid "Source string to be translated 1"
 msgstr "Translation 1"
@@ -13,3 +13,4 @@ msgstr "Translation 3"
 
 msgid "Source string to be translated 4"
 msgstr "Translation 4"
+
