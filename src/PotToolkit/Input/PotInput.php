@@ -24,25 +24,6 @@ class PotInput
     public function load($filename)
     {
         $this->translation_set = Po::extract($filename);
-
-        $translation = array();
-//        while (($line = fgets($potH)) !== false) {
-//            $matches = array();
-//            if (preg_match('/^msgid "(.*)"/', $line, $matches)) {
-//                $translation[0] = $matches[1];
-//            }
-//
-//            if (preg_match('/^msgstr "(.*)"/', $line, $matches)) {
-//                $translation[1] = $matches[1];
-//                if (empty($translation[1])) {
-//                    $translation[1] = $translation[0];
-//                }
-//
-//                $this->translation_set->addTranslation($translation[0], $translation[1]);
-//                $translation = array();
-//            }
-//        }
-
         return true;
     }
 
