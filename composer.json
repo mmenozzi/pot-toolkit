@@ -5,6 +5,7 @@
     "require": {
         "symfony/console": "v2.1.5",
         "mockery/mockery": "0.7.2",
-        "gettext/gettext": "dev-master"
+        "gettext/gettext": "dev-master",
+        "keboola/csv": "1.0.9"
     }
 }
