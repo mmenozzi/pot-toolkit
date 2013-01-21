@@ -3,6 +3,7 @@
 namespace PotToolkit\Tests\Command;
 
 use PotToolkit\Command\PotToCsvCommand;
+use Gettext\Entries;
 use Mockery as m;
 
 /**
@@ -25,7 +26,7 @@ class PotToCsvCommandTest extends \PHPUnit_Framework_TestCase
      */
     public function testExecute($inputFilePath, $outputFilePath)
     {
-        $translationSet = m::mock('Gettext\Entries');
+        $translationSet = $this->getTranslationSet();
 
         $potInput = m::mock('PotToolkit\Input\PotInput');
         $potInput->shouldReceive('load')->atLeast()->times(1)->with($inputFilePath);
@@ -39,9 +40,22 @@ class PotToCsvCommandTest extends \PHPUnit_Framework_TestCase
         $input->shouldReceive('getArgument')->atLeast()->times(1)->with('input')->andReturn($inputFilePath);
 
         $output = m::mock('Symfony\Component\Console\Output\OutputInterface');
+        $output->shouldReceive('writeln')->once()->with(
+            "<fg=white;options=bold>10</fg=white;options=bold> translations from <fg=white;options=bold>$inputFilePath</fg=white;options=bold> converted in CSV to <fg=white;options=bold>$outputFilePath</fg=white;options=bold>!"
+        );
 
         $command = new PotToCsvCommand(null, $potInput, $csvOutput);
         $command->execute($input, $output);
+    }
+
+    private function getTranslationSet()
+    {
+        $translationSet = new Entries();
+        for ($i = 0; $i < 10; $i++) {
+            $translationSet->insert(null, "Source $i")->setTranslation("Translation $i");
+        }
+
+        return $translationSet;
     }
 
 }

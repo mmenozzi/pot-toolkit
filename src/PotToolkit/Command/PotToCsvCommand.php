@@ -65,29 +65,10 @@ class PotToCsvCommand extends Command
 
         $this->csvOutput->write($outputFilePath);
 
-//        $pot_h = @fopen($pot_file, "r");
-//
-//        $csv_file = $pot_file . '.csv';
-//        $csv_h = @fopen($csv_file, "w");
-//
-//        $csv_line = array();
-//        while (($line = fgets($pot_h)) !== false) {
-//            $matches = array();
-//            if (preg_match('/^msgid "(.*)"/', $line, $matches)) {
-//                $csv_line[0] = $matches[1];
-//            }
-//
-//            if (preg_match('/^msgstr "(.*)"/', $line, $matches)) {
-//                $csv_line[1] = $matches[1];
-//                if (empty($csv_line[1])) {
-//                    $csv_line[1] = $csv_line[0];
-//                }
-//                $output->writeln($csv_line[0] . ' -> ' . $csv_line[1]);
-//                fputcsv($csv_h, $csv_line);
-//                $csv_line = array();
-//            }
-//        }
-//        $output->writeln("Done!");
+        $count = count($translationSet);
+        $output->writeln(
+            "<fg=white;options=bold>$count</fg=white;options=bold> translations from <fg=white;options=bold>$potFilePath</fg=white;options=bold> converted in CSV to <fg=white;options=bold>$outputFilePath</fg=white;options=bold>!"
+        );
     }
 
     private function computeOutputFilePath($potFilePath)
