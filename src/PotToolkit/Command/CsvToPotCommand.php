@@ -3,9 +3,13 @@
 namespace PotToolkit\Command;
 
 use Symfony\Component\Console\Command\Command;
+use Gettext\Translation;
+use Gettext\Entries;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Keboola\Csv\CsvFile;
+use Gettext\Generators\Po;
 
 /**
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
@@ -32,21 +36,31 @@ class CsvToPotCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $csv_file = $input->getArgument('input');
-        $csv_h = @fopen($csv_file, "r");
+        $csvFilePath = $input->getArgument('input');
+        $csvFile = new CsvFile($csvFilePath);
 
-        $pot_file = $csv_file . '.pot';
-        $pot_h = @fopen($pot_file, "w");
-
-        while (($data = fgetcsv($csv_h)) !== FALSE) {
-            fputs($pot_h, 'msgid "' . $data[0] . '"' . "\r\n");
-            fputs($pot_h, 'msgstr "' . $data[1] . '"' . "\r\n\r\n");
-            $output->writeln($data[0] . ' -> ' . $data[1]);
+        $translations = new Entries();
+        foreach ($csvFile as $csvRow) {
+           $translation = new Translation(null, $csvRow[0]);
+           $translation->setTranslation($csvRow[1]);
+           $translations->append($translation);
         }
 
-        fclose($csv_h);
-        fclose($pot_h);
+        $potFilePath = $this->computeOutputFilePath($csvFilePath);
+        Po::generateFile($translations, $potFilePath);
 
-        $output->writeln("Done!");
+        $output->writeln(
+            sprintf(
+                "Done! %s translations exported to %s.",
+                count($translations),
+                $potFilePath
+            )
+        );
+    }
+
+    private function computeOutputFilePath($csvFilePath)
+    {
+        $parts = pathinfo($csvFilePath);
+        return $parts['dirname'] . DIRECTORY_SEPARATOR . $parts['filename'] . '.pot';
     }
 }
