@@ -5,7 +5,7 @@ Here are useful commands about Gettext _.po_ files.
 
 Command _pot2csv_
 -----------------
-Converts _.po_ input file in Comma Separeted Value (_CSV_) format. Use help for more info:
+Converts _.po_ input file in Comma Separeted Value (CSV) format. Use help for more info:
 
 	$ ./potkit pot2csv --help
 
