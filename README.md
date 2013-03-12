@@ -17,3 +17,4 @@ Converts _.csv_ input file in Gettext _.po_ format. Use help for more info:
 	
 TODO
 ----
+* Any suggestions? Please, write to manuele.menozzi[at]gmail.com.
